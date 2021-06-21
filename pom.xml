@@ -30,7 +30,7 @@
         <spring-cloud.version>Hoxton.RELEASE</spring-cloud.version>
         <mysql-connector-java.version>8.0.20</mysql-connector-java.version>
         <mybatis-plus.version>3.4.2</mybatis-plus.version>
-        <knife4j.version>3.0.2</knife4j.version>
+        <knife4j.version>2.0.3</knife4j.version>
         <hutool.version>4.6.3</hutool.version>
         <springfox-swagger2.version>2.9.2</springfox-swagger2.version>
     </properties>
