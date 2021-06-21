@@ -22,6 +22,7 @@
         <module>mybatis-plus</module>
         <module>common</module>
         <module>redis</module>
+        <module>kafka</module>
     </modules>
 
     <properties>
