@@ -21,6 +21,7 @@
         <module>nacos-feign</module>
         <module>mybatis-plus</module>
         <module>common</module>
+        <module>redis</module>
     </modules>
 
     <properties>
@@ -33,6 +34,7 @@
         <knife4j.version>2.0.3</knife4j.version>
         <hutool.version>4.6.3</hutool.version>
         <springfox-swagger2.version>2.9.2</springfox-swagger2.version>
+        <easyexcel.version>2.2.6</easyexcel.version>
     </properties>
 
     <dependencies>
