@@ -1,6 +1,5 @@
 package com.example.common.exception;
 
-import cn.hutool.core.util.StrUtil;
 
 import com.example.common.exception.basic.IResponseCode;
 import com.example.common.exception.basic.ResponseCode;
@@ -26,20 +25,8 @@ public class BusinessException extends RuntimeException{
         this.code = ResponseCode.FAIL.getCode();
     }
 
-    /**
-     * 已废弃，建议使用 BaseException(IResponseCode responseCode)，否则无法支持多语化
-     *
-     * @param message
-     */
-    @Deprecated
     public BusinessException(String message) {
         this(ResponseCode.FAIL.getCode(), message);
-        setResponseCode(ResponseCode.FAIL);
-    }
-
-    @Deprecated
-    public BusinessException(String fmt, Object... info) {
-        this(ResponseCode.FAIL.getCode(), StrUtil.format(fmt, info));
         setResponseCode(ResponseCode.FAIL);
     }
 
