@@ -1,0 +1,13 @@
+server:
+  port: 31001
+spring:
+  application:
+    name: mongoDB
+  data:
+    mongodb:
+      #      uri: mongodb://admin:admin123456@47.101.71.236:27017
+      #      database: admin
+      uri: mongodb://localhost:27017
+      database: xc_cms
+
+

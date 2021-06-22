@@ -23,6 +23,7 @@
         <module>common</module>
         <module>redis</module>
         <module>kafka</module>
+        <module>mongo</module>
     </modules>
 
     <properties>
