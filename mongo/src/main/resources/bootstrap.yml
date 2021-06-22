@@ -6,6 +6,7 @@ spring:
   data:
     mongodb:
       #      uri: mongodb://admin:admin123456@47.101.71.236:27017
+      #      uri: mongodb://user:secret@mongo1.example.com:12345,mongo2.example.com:23456
       #      database: admin
       uri: mongodb://localhost:27017
       database: xc_cms
