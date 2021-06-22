@@ -1,7 +1,6 @@
 package com.example.common.utils;
 
-import cn.hutool.json.JSONObject;
-import cn.hutool.json.JSONUtil;
+import com.alibaba.fastjson.JSONObject;
 import com.example.common.exception.BusinessException;
 import com.example.common.exception.basic.ResponseCode;
 import org.slf4j.Logger;
@@ -55,7 +54,7 @@ public class HttpUtil {
                 resEntity = restTemplate.exchange(url, HttpMethod.GET, httpEntity, String.class, param);
             }
 
-            jsonObject = JSONUtil.parseObj(resEntity.getBody());
+            jsonObject = JSONObject.parseObject(resEntity.getBody());
         } catch (Exception e) {
             if (e.toString().contains("timed out")) {
                 throw new BusinessException(ResponseCode.ECSC_CONNECTION_TIMEOUT);
@@ -103,7 +102,7 @@ public class HttpUtil {
             HttpEntity httpEntity = new HttpEntity<>(headers);
             resEntity = restTemplate.exchange(url, HttpMethod.GET, httpEntity, String.class);
 
-            jsonObject = JSONUtil.parseObj(resEntity.getBody());
+            jsonObject = JSONObject.parseObject(resEntity.getBody());
         } catch (Exception e) {
             if (e.toString().contains("timed out")) {
                 throw new BusinessException(ResponseCode.ECSC_CONNECTION_TIMEOUT);
@@ -163,7 +162,7 @@ public class HttpUtil {
 
             HttpEntity httpEntity = new HttpEntity<>(param, headers);
             ResponseEntity<String> resEntity = restTemplate.exchange(url, HttpMethod.PUT, httpEntity, String.class);
-            jsonObject = JSONUtil.parseObj(resEntity.getBody());
+            jsonObject = JSONObject.parseObject(resEntity.getBody());
         } catch (Exception e) {
             if (e.toString().contains("timed out")) {
                 throw new BusinessException(String.valueOf(ResponseCode.ECSC_CONNECTION_TIMEOUT));
