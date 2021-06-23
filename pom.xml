@@ -24,6 +24,7 @@
         <module>redis</module>
         <module>kafka</module>
         <module>mongo</module>
+        <module>elasticsearch</module>
     </modules>
 
     <properties>
