@@ -25,6 +25,7 @@
         <module>kafka</module>
         <module>mongo</module>
         <module>elasticsearch</module>
+        <module>ribbitmq</module>
     </modules>
 
     <properties>
