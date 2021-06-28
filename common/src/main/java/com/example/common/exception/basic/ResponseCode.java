@@ -11,6 +11,7 @@ public enum ResponseCode implements IResponseCode {
     FORBIDDEN_ACCESS(403, "访问未授权"),
     ACCOUNT_NOTFOUND(404, "账号不存在"),
     ACCOUNT_EXPIRED(405, "账号过期"),
+    PASSWORD_EXPIRED(405, "密码过期"),
     LOGIN_INVALID(406, "账号或密码错误"),
     ACCOUNT_LOCKED(406, "账号锁定"),
     PARAMETER_INVALID(407, "参数错误"),

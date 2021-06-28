@@ -26,6 +26,7 @@
         <module>mongo</module>
         <module>elasticsearch</module>
         <module>ribbitmq</module>
+        <module>security</module>
     </modules>
 
     <properties>
