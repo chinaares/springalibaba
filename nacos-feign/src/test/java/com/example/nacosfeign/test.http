@@ -1,1 +1,7 @@
-GET http://localhost:8890/test
+GET http://localhost:8890/api/feign/hello
+
+###
+GET http://localhost:8890/data/1.jpeg
+
+###
+GET http://localhost:8890/disk/c4ed29e8cef844daafda860d061f7c8b.jpeg

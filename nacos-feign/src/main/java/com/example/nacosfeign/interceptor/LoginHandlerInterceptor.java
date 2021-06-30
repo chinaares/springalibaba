@@ -39,7 +39,7 @@ public class LoginHandlerInterceptor implements HandlerInterceptor {
         //不为 null，则说明一次会话内，已经请求过 /user/index，否则就让它先去请求 /user/index
         if (isLogin == null) {
             //重定向到 /user/index
-            response.sendRedirect("/api/feign/hello");
+            request.getRequestDispatcher("/api/feign/user/index").forward(request, response);
             return false;
         }
         return true;
