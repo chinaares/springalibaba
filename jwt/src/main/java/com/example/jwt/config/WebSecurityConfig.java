@@ -1,10 +1,11 @@
-package com.example.security.config;
+package com.example.jwt.config;
 
-import com.example.security.authentication.CustomizeAuthenticationProvider;
-import com.example.security.filter.CustomizeAccessDecisionManager;
-import com.example.security.filter.CustomizeFilterInvocationSecurityMetadataSource;
-import com.example.security.handler.*;
-import com.example.security.interceptor.CustomizeAbstractSecurityInterceptor;
+
+import com.example.jwt.authentication.CustomizeAuthenticationProvider;
+import com.example.jwt.filter.CustomizeAccessDecisionManager;
+import com.example.jwt.filter.CustomizeFilterInvocationSecurityMetadataSource;
+import com.example.jwt.filter.JwtAuthorizationFilter;
+import com.example.jwt.handler.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -14,6 +15,7 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.access.intercept.FilterSecurityInterceptor;
 
 @Configuration
@@ -44,27 +46,21 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         return new LoginFailHandler();
     }
 
-    //注入未登录的异常处理器
-    @Bean
-    public CustomizeAuthenticationEntryPoint getCustomizeAuthenticationEntryPoint() {
-        return new CustomizeAuthenticationEntryPoint();
-    }
-
     //注入登出成功的处理器
     @Bean
     public CustomizeLogoutSuccessHandler getCustomizeLogOutSuccessHandler() {
         return new CustomizeLogoutSuccessHandler();
     }
 
-    //注册自定义的UsernamePasswordAuthenticationFilter
-//	@Bean
-//	public CustomizeAuthenticationFilter getCustomizeAuthenticationFilter() throws Exception {
-//		CustomizeAuthenticationFilter filter = new CustomizeAuthenticationFilter(authenticationManager());
-//		filter.setAuthenticationSuccessHandler(getLoginSuccessHandler());
-//		filter.setAuthenticationFailureHandler(getLoginFailHandler());
-//		filter.setFilterProcessesUrl("/authentication/form");
-//		return filter;
-//	}
+    //注入未登录的异常处理器
+    @Bean
+    public CustomizeAuthenticationEntryPoint getCustomizeAuthenticationEntryPoint() {
+        return new CustomizeAuthenticationEntryPoint();
+    }
+
+    //登录后,访问没有权限处理类
+    @Autowired
+    private CustomizeAccessDeniedHandler customAccessDeniedHandler;
 
     //访问决策管理器
     @Autowired
@@ -74,25 +70,19 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     CustomizeFilterInvocationSecurityMetadataSource securityMetadataSource;
 
-    @Autowired
-    private CustomizeAbstractSecurityInterceptor securityInterceptor;
-
-    @Autowired
-    private CustomizeAccessDeniedHandler customAccessDeniedHandler;
-
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         //1.配置授权方式，这个configure方法里面主要是配置一些
         //http的相关配置，包括登入，登出，异常处理，会话管理等
-        http.authorizeRequests().
-                withObjectPostProcessor(new ObjectPostProcessor<FilterSecurityInterceptor>() {
-                    @Override
-                    public <O extends FilterSecurityInterceptor> O postProcess(O o) {
-                        o.setAccessDecisionManager(accessDecisionManager);//访问决策管理器
-                        o.setSecurityMetadataSource(securityMetadataSource);//安全元数据源
-                        return o;
-                    }
-                })
+        http.authorizeRequests()
+                .withObjectPostProcessor(new ObjectPostProcessor<FilterSecurityInterceptor>() {
+                            @Override
+                            public <O extends FilterSecurityInterceptor> O postProcess(O o) {
+                                o.setAccessDecisionManager(accessDecisionManager);//访问决策管理器
+                                o.setSecurityMetadataSource(securityMetadataSource);//安全元数据源
+                                return o;
+                            }
+                        })
                 //登陆页面，登陆请求，登出请求，任何人都可以访问
                 .antMatchers("*/login", "/authentication/form", "/logout", "*/home").permitAll()
                 //动态加载权限时，这里注释掉
@@ -128,10 +118,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .csrf().disable();
 
         //增加到默认拦截链中
-        http.addFilterBefore(securityInterceptor, FilterSecurityInterceptor.class);
-        /*jwt验证时添加*/
-//                .addFilter(new JwtAuthorizationFilter(authenticationManager()))
-//                .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+        http.addFilter(new JwtAuthorizationFilter(authenticationManager()))
+                .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
     }
 
     @Override

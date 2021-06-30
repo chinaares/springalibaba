@@ -1,4 +1,4 @@
-package com.example.security.interceptor;
+package com.example.security.filter;
 
 import org.springframework.security.access.AccessDecisionManager;
 import org.springframework.security.access.AccessDeniedException;

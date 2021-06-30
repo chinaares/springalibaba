@@ -1,0 +1,16 @@
+GET http://localhost:8012/logout
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqb2tlciIsInJvbGUiOiJieHNoZW5nIiwiaXNzIjoiZWNoaXNhbiIsImV4cCI6MTYyNDk0NTkyMSwiaWF0IjoxNjI0OTM1MTIxfQ.EH_c4hLQ_qOfnOY1rELHCcwV42UTh-uyjYnr1Hz7YZhiggzOs4Gd8BUCLuFfEaO7_tmKPTsLi3G6sj0PmEHcJQ
+
+###
+POST http://localhost:8012/authentication/form
+Content-Type: application/x-www-form-urlencoded
+
+username=joker&password=123456
+
+###
+GET http://localhost:8012/user/getUsers
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqb2tlciIsInJvbGUiOiJxdWVyeV9yb2xlLHF1ZXJ5X3VzZXIiLCJleHAiOjE2MjUwMjQyMjN9.ZdGd8kRkFzNw9rhHOVQCUAo53UMRzGS3y3eh1l7XTFo
+
+###
+DELETE http://localhost:8012/user/deleteUserById?userId=3
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqb2tlciIsInJvbGUiOiJxdWVyeV9yb2xlLHF1ZXJ5X3VzZXIiLCJleHAiOjE2MjUwMjQyMjN9.ZdGd8kRkFzNw9rhHOVQCUAo53UMRzGS3y3eh1l7XTFo

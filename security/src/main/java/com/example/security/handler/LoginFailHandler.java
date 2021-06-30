@@ -1,4 +1,4 @@
-package com.example.security.config;
+package com.example.security.handler;
 
 import com.alibaba.fastjson.JSON;
 import com.example.common.exception.basic.APIResponse;

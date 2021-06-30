@@ -27,6 +27,7 @@
         <module>elasticsearch</module>
         <module>ribbitmq</module>
         <module>security</module>
+        <module>jwt</module>
     </modules>
 
     <properties>

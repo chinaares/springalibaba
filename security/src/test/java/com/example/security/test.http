@@ -1,0 +1,16 @@
+GET http://localhost:8011/logout
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJqb2tlciIsInJvbGUiOiJieHNoZW5nIiwiaXNzIjoiZWNoaXNhbiIsImV4cCI6MTYyNDk0NTkyMSwiaWF0IjoxNjI0OTM1MTIxfQ.EH_c4hLQ_qOfnOY1rELHCcwV42UTh-uyjYnr1Hz7YZhiggzOs4Gd8BUCLuFfEaO7_tmKPTsLi3G6sj0PmEHcJQ
+
+###
+POST http://localhost:8011/authentication/form
+Content-Type: application/x-www-form-urlencoded
+
+username=joker&password=123456
+
+###
+GET http://localhost:8011/user/getUsers
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqb2tlciIsInJvbGUiOiJxdWVyeV91c2VyIiwiZXhwIjoxNjI0OTU5ODQwfQ.JsF58_Bd0Celoz6y0iPclXjjKHHPOm7vJ6EEyC4gOQg
+
+###
+DELETE http://localhost:8011/user/deleteUserById?userId=3
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqb2tlciIsInJvbGUiOiJxdWVyeV9yb2xlLHF1ZXJ5X3VzZXIiLCJleHAiOjE2MjQ5NjAzODR9.RLpAKnbFmUSFswDkItmh-Ehtm_YEAyPXLTR_CUkA0Ek

@@ -1,4 +1,4 @@
-package com.example.security.config;
+package com.example.security.authentication;
 
 import com.example.common.exception.basic.ResponseCode;
 import com.example.common.utils.Md5Util;
@@ -6,13 +6,13 @@ import com.example.security.entity.SysPermission;
 import com.example.security.entity.SysUser;
 import com.example.security.service.SysPermissionService;
 import com.example.security.service.SysUserService;
+import lombok.SneakyThrows;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.InternalAuthenticationServiceException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
-import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
@@ -37,7 +37,8 @@ public class CustomizeAuthenticationProvider implements AuthenticationProvider {
     private SysPermissionService permissionService;
 
     @Override
-    public Authentication authenticate(Authentication authentication) throws AuthenticationException {
+    @SneakyThrows
+    public Authentication authenticate(Authentication authentication){
         //获取前端传过来的的username和password
         String username = authentication.getName();
         String prepassword = (String) authentication.getCredentials();
