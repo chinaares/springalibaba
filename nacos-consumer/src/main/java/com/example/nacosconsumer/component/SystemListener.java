@@ -1,8 +1,9 @@
-package com.example.nacosprovide.component;
+package com.example.nacosconsumer.component;
 
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
-
+import javax.servlet.annotation.WebListener;
+ 
 /**
  * 标准 Servlet 监听器，实现 javax.servlet.ServletContextListener 接口，并重写方法
  * ServletContextListener 属于 Servlet 应用启动关闭监听器，监听容器初始化与销毁。常用的监听器还有：
@@ -11,13 +12,14 @@ import javax.servlet.ServletContextListener;
  * HttpSessionAttributeListener 监听HttpSession中属性变化
  * ServletRequestAttributeListener 监听ServletRequest中属性变化
  */
+@WebListener
 public class SystemListener implements ServletContextListener {
     @Override
     public void contextInitialized(ServletContextEvent servletContextEvent) {
-        System.out.println("com.example.nacosprovide.component.SystemListener::服务器启动.....");
+        System.out.println("com.example.nacosconsumer.component.SystemListener::服务器启动.....");
     }
     @Override
     public void contextDestroyed(ServletContextEvent servletContextEvent) {
-        System.out.println("com.example.nacosprovide.component.SystemListener::服务器关闭.....");
+        System.out.println("com.example.nacosconsumer.component.SystemListener::服务器关闭.....");
     }
 }

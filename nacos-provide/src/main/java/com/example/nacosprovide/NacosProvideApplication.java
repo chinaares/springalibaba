@@ -7,7 +7,7 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 @EnableDiscoveryClient
 @SpringBootApplication
-@MapperScan
+@MapperScan//指定要变成实现类的接口所在的包，然后包下面的所有接口在编译之后都会生成相应的实现类
 public class NacosProvideApplication {
 
 	public static void main(String[] args) {
