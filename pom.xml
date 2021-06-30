@@ -28,6 +28,7 @@
         <module>ribbitmq</module>
         <module>security</module>
         <module>jwt</module>
+        <module>thymeleaf</module>
     </modules>
 
     <properties>
@@ -80,12 +81,6 @@
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger2</artifactId>
             <version>${springfox-swagger2.version}</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>io.swagger</groupId>
-                    <artifactId>swagger-models</artifactId>
-                </exclusion>
-            </exclusions>
         </dependency>
     </dependencies>
 
