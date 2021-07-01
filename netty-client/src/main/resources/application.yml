@@ -1,0 +1,12 @@
+server:
+  port: 8015
+
+spring:
+  application:
+    name: netty
+
+netty:
+  portHTTP: 9090
+  host: 127.0.0.1
+
+

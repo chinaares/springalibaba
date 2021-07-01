@@ -1,0 +1,13 @@
+server:
+  port: 8014
+
+spring:
+  application:
+    name: netty
+
+netty:
+  sobacklog: 128
+  workGroupThreads: 200
+  port: 9090
+  openSSL: false
+

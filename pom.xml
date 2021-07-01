@@ -29,6 +29,8 @@
         <module>security</module>
         <module>jwt</module>
         <module>thymeleaf</module>
+        <module>netty-service</module>
+        <module>netty-client</module>
     </modules>
 
     <properties>
