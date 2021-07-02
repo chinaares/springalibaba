@@ -2,14 +2,13 @@ package com.example.nacosfeign.config;
 
 
 import com.example.nacosfeign.interceptor.LoginHandlerInterceptor;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 /**
  * 实现 WebMvcConfigurer 接口，然后重启需要的方法，比如注册拦截器，则重写 addInterceptors(InterceptorRegistry registry)
  */
-@Configuration
+//@Configuration
 public class MvcConfigurer implements WebMvcConfigurer {
     /**
      * 注册拦截器
