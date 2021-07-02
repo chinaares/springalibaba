@@ -9,9 +9,6 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * 登录拦截器
  *
- * @author wangmaoxiong
- * @version 1.0
- * @date 2020/4/30 17:18
  */
 public class LoginHandlerInterceptor implements HandlerInterceptor {
     @Override

@@ -1,3 +1,21 @@
+GET http://localhost:8890/api/feign/hello
+
+<> 2021-07-02T012202.200.txt
+
+###
+
+GET http://localhost:8890/api/feign/hello
+
+<> 2021-07-02T012157.200.txt
+
+###
+
+GET http://localhost:8890/api/feign/hello
+
+<> 2021-07-02T012003.200.txt
+
+###
+
 GET http://localhost:9090/wwww
 
 ###
@@ -255,29 +273,6 @@ GET http://localhost:8012/user/getUsers
 Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqb2tlciIsInJvbGUiOiJxdWVyeV9yb2xlLHF1ZXJ5X3VzZXIiLCJleHAiOjE2MjUwMjQyMjN9.ZdGd8kRkFzNw9rhHOVQCUAo53UMRzGS3y3eh1l7XTFo
 
 <> 2021-06-30T103909.200.json
-
-###
-
-GET http://localhost:8012/user/getUsers
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqb2tlciIsInJvbGUiOiJxdWVyeV9yb2xlLHF1ZXJ5X3VzZXIiLCJleHAiOjE2MjUwMjQyMjN9.ZdGd8kRkFzNw9rhHOVQCUAo53UMRzGS3y3eh1l7XTFo
-
-<> 2021-06-30T103740.200.json
-
-###
-
-POST http://localhost:8012/authentication/form
-Content-Type: application/x-www-form-urlencoded
-
-username=joker&password=123456
-
-<> 2021-06-30T103703.200.json
-
-###
-
-GET http://localhost:8012/user/getUsers
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqb2tlciIsInJvbGUiOlt7ImF1dGhvcml0eSI6InF1ZXJ5X3JvbGUifSx7ImF1dGhvcml0eSI6InF1ZXJ5X3VzZXIifV0sImV4cCI6MTYyNTAyMzEyNH0.O-5G3ULM-sJc-jOM4kdSxdzWpLqXD7icacAQ0HCWLjU
-
-<> 2021-06-30T103639.200.json
 
 ###
 

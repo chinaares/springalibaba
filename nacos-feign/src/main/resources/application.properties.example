@@ -1,5 +1,5 @@
 server:
-  port: 8888
+  port: 8890
 
 spring:
   datasource:
@@ -13,7 +13,26 @@ spring:
     database : 1
     timeout: 3000
     lettuce:
-      pool.max-idle: 8 #Á¬½Ó³ØÖĞ×î´ó¿ÕÏĞÁ¬½Ó
-      pool.min-idle: 1 #Á¬½Ó³ØÖĞ×îĞ¡¿ÕÏĞÁ¬½Ó
-      pool.max-active: 8 #Á¬½Ó³Ø×î´óÁ¬½ÓÊı
-      pool.max-wait: -1  #Á¬½Ó³Ø×î´ó×èÈûµÈ´ıÊ±¼ä£¬¸ºÖµ±íÊ¾Ã»ÓĞÏŞÖÆ
+      pool.max-idle: 8 #è¿æ¥æ± ä¸­æœ€å¤§ç©ºé—²è¿æ¥
+      pool.min-idle: 1 #è¿æ¥æ± ä¸­æœ€å°ç©ºé—²è¿æ¥
+      pool.max-active: 8 #è¿æ¥æ± æœ€å¤§è¿æ¥æ•°
+      pool.max-wait: -1  #è¿æ¥æ± æœ€å¤§é˜»å¡ç­‰å¾…æ—¶é—´ï¼Œè´Ÿå€¼è¡¨ç¤ºæ²¡æœ‰é™åˆ¶
+
+# mybatis-plusç›¸å…³é…ç½®
+mybatis-plus:
+  # xmlæ‰«æï¼Œå¤šä¸ªç›®å½•ç”¨é€—å·æˆ–è€…åˆ†å·åˆ†éš”ï¼ˆå‘Šè¯‰ Mapper æ‰€å¯¹åº”çš„ XML æ–‡ä»¶ä½ç½®ï¼‰
+  mapper-locations: classpath:mapper/*.xml
+
+feign:
+  #æ›¿æ¢æ‰JDKé»˜è®¤HttpURLConnectionå®ç°çš„ Http Client
+  httpclient:
+    enabled: true
+  hystrix:
+    enabled: true
+  client:
+    config:
+      default:
+       #è¿æ¥è¶…æ—¶æ—¶é—´
+        connectTimeout: 5000
+       #è¯»å–è¶…æ—¶æ—¶é—´
+        readTimeout: 5000

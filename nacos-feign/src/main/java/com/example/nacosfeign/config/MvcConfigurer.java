@@ -7,9 +7,6 @@ import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 /**
- * @author wangmaoxiong
- * @version 1.0
- * @date 2020/4/30 17:25
  * 实现 WebMvcConfigurer 接口，然后重启需要的方法，比如注册拦截器，则重写 addInterceptors(InterceptorRegistry registry)
  */
 @Configuration
@@ -28,8 +25,8 @@ public class MvcConfigurer implements WebMvcConfigurer {
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(new LoginHandlerInterceptor())
                 .addPathPatterns("/**")
-                .excludePathPatterns("/api/feign/user/index")
-                .excludePathPatterns("/webjars/**", "/css/**/*.css", "/js/**/*.js", "/fonts/**", "/images/**");
+                .excludePathPatterns("/api/feign/hello","/api/feign/user/index")
+                .excludePathPatterns("/doc.html","/swagger-resources","/v2/api-docs","/webjars/**", "/**/*.css", "/**/*.js", "/fonts/**", "/images/**");
     }
 
     /**

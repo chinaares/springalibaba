@@ -55,7 +55,10 @@ public class SwaggerConfiguration {
                 .apis(RequestHandlerSelectors.basePackage("com.example.nacosfeign.controller"))
                 .paths(PathSelectors.any())
                 .build()
+                //3.0以下版本
                 .globalOperationParameters(globalRequestParameters())
+                //3.0以上版本
+//                .globalRequestParameters(globalRequestParameters())
                 .ignoredParameterTypes(HttpServletResponse.class, HttpServletRequest.class);
     }
 
@@ -65,6 +68,7 @@ public class SwaggerConfiguration {
                 .version("1.0").build();
     }
 
+    //3.0以下版本
     private List<Parameter> globalRequestParameters() {
         ParameterBuilder parameterBuilder = new ParameterBuilder()
                 //每次请求加载header
@@ -77,5 +81,18 @@ public class SwaggerConfiguration {
                 ;
         return Collections.singletonList(parameterBuilder.build());
     }
+
+    //3.0以上版本
+//    private List<RequestParameter> globalRequestParameters() {
+//        RequestParameterBuilder parameterBuilder = new RequestParameterBuilder()
+//                //每次请求加载header
+//                .in(ParameterType.HEADER)
+//                //头标签
+//                .name("Authorization")
+//                .description("登录token")
+//                .required(false)
+//                .query(param -> param.model(model -> model.scalarModel(ScalarType.STRING)));
+//        return Collections.singletonList(parameterBuilder.build());
+//    }
 
 }
