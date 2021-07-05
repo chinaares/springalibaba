@@ -36,3 +36,13 @@ feign:
         connectTimeout: 5000
        #读取超时时间
         readTimeout: 5000
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: hystrix.stream # 访问/actuator/hystrix.stream能看到不断更新的监控流
+
+hystrix:
+  dashboard:
+    proxy-stream-allow-list: "localhost"

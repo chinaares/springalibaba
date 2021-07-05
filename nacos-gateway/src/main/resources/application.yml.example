@@ -1,0 +1,31 @@
+server:
+  port: 8891
+spring:
+  cloud:
+    gateway:
+	  discovery:
+          locator:
+              enabled: true  #表明gateway开启服务注册和发现的功能，并且spring cloud gateway自动根据服务发现为每一个服务创建了一个router，这个router将以服务名开头的请求路径转发到对应的服务
+              lower-case-service-id: true  #是将请求路径上的服务名配置为小写（因为服务注册的时候，向注册中心注册时将服务名转成大写的了
+      routes:
+          # 路由id，建议配合服务名
+        - id: demo_route
+          #匹配路由名
+          uri: lb://demo-provider
+          predicates:
+	      # 断言，路径相匹配的进行路由
+          - Path=/demo/**
+          #一般情况下我们配合path路由使用，这里的意思是假如，我们的demo-provider服务种有一个/test的接口，
+          #实际上我们的请求路径经过网关时应该时/demo/test，这样就能把这个路由分发到demo-provider服务中，
+          #但是分发过去的路由是/demo/test，和我们实际的/test接口不一样。这时候我们用StripPrefix=1，来截取掉一级路由，这样转发过去的路由就是/test了。
+          filters:
+          - StripPrefix=1
+          - MyParam=name # 配置后就可以获取请求中key为name的值,对应MyParamGatewayFilterFactory
+          - PrefixPath=/goods/v1 # 添加url前缀 /goods/v1
+          - name: RequestRateLimiter #请求数限流 名字不能随便写
+            args:
+              key-resolver: "#{@ipKeyResolver}"
+              redis-rate-limiter.replenishRate: 1 #令牌桶每秒填充平均速率
+              redis-rate-limiter.burstCapacity: 1 #令牌桶总容量
+
+
