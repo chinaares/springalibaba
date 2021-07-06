@@ -2,7 +2,6 @@ package com.example.nacosgateway.config;
 
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.cloud.gateway.config.GatewayProperties;
 import org.springframework.cloud.gateway.route.RouteLocator;
 import org.springframework.cloud.gateway.support.NameUtils;
@@ -30,10 +29,9 @@ import java.util.List;
 @Slf4j
 public class DocumentationConfig implements SwaggerResourcesProvider {
     public static final String V2_API_URI = "v2/api-docs";
+    public static final String V3_API_URI = "/v3/api-docs?group=WebApi";
     private final RouteLocator routeLocator;
     private final GatewayProperties gatewayProperties;
-
-    private DiscoveryClient discoveryClient;
 
     @Override
     public List<SwaggerResource> get() {
@@ -49,6 +47,11 @@ public class DocumentationConfig implements SwaggerResourcesProvider {
                             predicateDefinition.getArgs().get(NameUtils.GENERATED_NAME_PREFIX + "0")
                                     .replace("**", V2_API_URI))));
         });
+//        routeLocator.getRoutes()
+//                .filter(route -> route.getUri().getHost() != null && route.getUri().getScheme().startsWith("http"))
+//                .subscribe(route -> {
+//                    resources.add(swaggerResource(route.getId(), route.getId() + V3_API_URI));
+//                });
 
         return resources;
     }
