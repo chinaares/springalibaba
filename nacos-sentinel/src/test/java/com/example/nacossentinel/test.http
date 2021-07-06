@@ -1,0 +1,7 @@
+GET http://localhost:8014/api/consumer
+
+###
+GET http://localhost:8014/api/doSomeThing
+
+###
+GET http://localhost:8014/api/doSomeThing2

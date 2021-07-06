@@ -5,7 +5,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.3.7.RELEASE</version>
+        <version>2.3.2.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.example</groupId>
@@ -32,13 +32,13 @@
         <module>netty-service</module>
         <module>netty-client</module>
         <module>nacos-gateway</module>
+        <module>nacos-sentinel</module>
     </modules>
 
     <properties>
         <java.version>1.8</java.version>
-        <spring-boot.version>2.3.7.RELEASE</spring-boot.version>
-        <alibaba.version>2.2.2.RELEASE</alibaba.version>
-        <spring-cloud.version>Hoxton.RELEASE</spring-cloud.version>
+        <alibaba.version>2.2.5.RELEASE</alibaba.version>
+        <spring-cloud.version>Hoxton.SR8</spring-cloud.version>
         <mysql-connector-java.version>8.0.20</mysql-connector-java.version>
         <mybatis-plus.version>3.4.2</mybatis-plus.version>
         <knife4j.version>2.0.3</knife4j.version>
