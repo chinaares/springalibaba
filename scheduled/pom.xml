@@ -7,9 +7,9 @@
 		<artifactId>nacos</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<artifactId>kafka</artifactId>
+	<artifactId>scheduled</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>kafka</name>
+	<name>scheduled</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>1.8</java.version>
@@ -17,12 +17,13 @@
 
 	<dependencies>
 		<dependency>
-			<groupId>org.springframework.kafka</groupId>
-			<artifactId>spring-kafka</artifactId>
+			<groupId>com.example</groupId>
+			<artifactId>common</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 		<dependency>
 			<groupId>com.example</groupId>
-			<artifactId>common</artifactId>
+			<artifactId>mybatis-plus</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 	</dependencies>
