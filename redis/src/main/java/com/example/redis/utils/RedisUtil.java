@@ -47,6 +47,7 @@ public final class RedisUtil {
     public void exec() {
         redisTemplate.exec();
     }
+
     /**
      * 指定缓存失效时间
      *
@@ -129,6 +130,20 @@ public final class RedisUtil {
 
     public Object get(String key) {
         return key == null ? null : redisTemplate.opsForValue().get(key);
+
+    }
+
+
+    /**
+     * 获取缓存值
+     *
+     * @param key
+     * @param tClass
+     * @param <T>
+     * @return
+     */
+    public <T> T get(String key, Class<T> tClass) {
+        return key == null ? null : (T) redisTemplate.opsForValue().get(key);
 
     }
 
@@ -759,7 +774,7 @@ public final class RedisUtil {
 
     /**
      * 查询集合中指定顺序的值， 0 -1 表示获取全部的集合内容  zrange
-     *
+     * <p>
      * 返回有序的集合，score小的在前面
      *
      * @param key
@@ -773,7 +788,7 @@ public final class RedisUtil {
 
     /**
      * 查询集合中指定顺序的值  zrevrange
-     *
+     * <p>
      * 返回有序的集合中，score大的在前面
      *
      * @param key
@@ -815,6 +830,7 @@ public final class RedisUtil {
 
     /**
      * pipeline管道批量获取数据
+     *
      * @param keyList
      */
     public List<Object> batchGet(List<String> keyList) {
@@ -823,7 +839,7 @@ public final class RedisUtil {
             @Override
             public String doInRedis(RedisConnection connection) throws DataAccessException {
                 connection.openPipeline();
-                for (String param:keyList) {
+                for (String param : keyList) {
                     connection.get(param.getBytes());
                 }
                 return null;
@@ -834,6 +850,7 @@ public final class RedisUtil {
 
     /**
      * 批量插入数据
+     *
      * @param saveList
      * @param unit
      * @param timeout
@@ -843,14 +860,15 @@ public final class RedisUtil {
             @Override
             public <K, V> Object execute(RedisOperations<K, V> redisOperations) throws DataAccessException {
                 for (Map<String, String> needSave : saveList) {
-                    redisTemplate.opsForValue().set(needSave.get("key"), needSave.get("value"), timeout,unit);
+                    redisTemplate.opsForValue().set(needSave.get("key"), needSave.get("value"), timeout, unit);
                 }
                 return null;
             }
-        },redisTemplate.getValueSerializer());
+        }, redisTemplate.getValueSerializer());
     }
 
     // =================GEO数据=====================
+
     /***
      * 将指定的地理空间位置（纬度、经度、名称）添加到指定的key中。
      * @param key redis的key

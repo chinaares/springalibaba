@@ -1,0 +1,7 @@
+### JWT登录权限校验
+1. WebSecurityConfig相关登录权限Security配置
+2. 登录/authentication/form，登录成功LoginSuccessHandler，登录失败LoginFailHandler
+3. 登出/logout，登出成功CustomizeLogoutSuccessHandler
+4. 匿名用户访问无权限CustomizeAuthenticationEntryPoint,用户访问没有授权资源CustomizeAccessDeniedHandler
+5. 登录验证CustomizeAuthenticationProvider,LoginSuccessHandler返回jwt信息
+6. 方法调用拦截器JwtAuthorizationFilter验证，获取所需权限CustomizeFilterInvocationSecurityMetadataSource，验证权限CustomizeAccessDecisionManager

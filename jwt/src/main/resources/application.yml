@@ -1,5 +1,5 @@
 server:
-  port: 8012
+  port: 8012 #服务器端口
 
 spring:
   application:
@@ -20,4 +20,3 @@ spring:
 mybatis-plus:
   # xml扫描，多个目录用逗号或者分号分隔（告诉 Mapper 所对应的 XML 文件位置）
   mapper-locations: classpath:mapper/*.xml
-

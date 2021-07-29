@@ -1,3 +1,71 @@
+GET http://localhost:8012/user/getUsers
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqb2tlciIsInJvbGUiOiJxdWVyeV9yb2xlLHF1ZXJ5X3VzZXIiLCJleHAiOjE2Mjc1NDY3OTd9.UY9wFTBnIJx1v1O_OKvh22II9fCNzr89eQJ9jaJyR4g
+
+<> 2021-07-29T032025.200.json
+
+###
+
+POST http://localhost:8012/authentication/form
+Content-Type: application/x-www-form-urlencoded
+
+username=joker&password=123456
+
+<> 2021-07-29T031957.200.json
+
+###
+
+GET http://localhost:8012/user/getUsers
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqb2tlciIsInJvbGUiOiJxdWVyeV9yb2xlLHF1ZXJ5X3VzZXIiLCJleHAiOjE2MjUwMjQyMjN9.ZdGd8kRkFzNw9rhHOVQCUAo53UMRzGS3y3eh1l7XTFo
+
+<> 2021-07-29T031833.200.json
+
+###
+
+GET http://localhost:8012/user/getUsers
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqb2tlciIsInJvbGUiOiJxdWVyeV9yb2xlLHF1ZXJ5X3VzZXIiLCJleHAiOjE2MjUwMjQyMjN9.ZdGd8kRkFzNw9rhHOVQCUAo53UMRzGS3y3eh1l7XTFo
+
+<> 2021-07-29T031142.500.json
+
+###
+
+GET http://localhost:8012/user/getUsers
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqb2tlciIsInJvbGUiOiJxdWVyeV9yb2xlLHF1ZXJ5X3VzZXIiLCJleHAiOjE2MjUwMjQyMjN9.ZdGd8kRkFzNw9rhHOVQCUAo53UMRzGS3y3eh1l7XTFo
+
+<> 2021-07-29T030339.500.json
+
+###
+
+GET http://localhost:8012/user/getUsers
+
+<> 2021-07-29T025910.200.json
+
+###
+
+GET http://localhost:8012/user/getUsers
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqb2tlciIsInJvbGUiOiJxdWVyeV9yb2xlLHF1ZXJ5X3VzZXIiLCJleHAiOjE2MjUwMjQyMjN9.ZdGd8kRkFzNw9rhHOVQCUAo53UMRzGS3y3eh1l7XTFo
+
+<> 2021-07-29T025722.500.json
+
+###
+
+POST http://localhost:8012/authentication/form
+Content-Type: application/x-www-form-urlencoded
+
+username=joker&password=123456
+
+<> 2021-07-29T025511.200.json
+
+###
+
+POST http://localhost:8012/authentication/form
+Content-Type: application/x-www-form-urlencoded
+
+username=joker&password=123456
+
+<> 2021-07-29T025210.200.json
+
+###
+
 GET http://localhost:8014/api/doSomeThing
 
 <> 2021-07-05T050924.200.txt
@@ -241,60 +309,6 @@ GET http://localhost:8014/api/consumer
 GET http://localhost:8014/api/consumer
 
 <> 2021-07-05T050449.500.json
-
-###
-
-GET http://localhost:8014/api/consumer
-
-<> 2021-07-05T050448.500.json
-
-###
-
-GET http://localhost:8014/api/consumer
-
-<> 2021-07-05T050416.500.json
-
-###
-
-GET http://localhost:8014/api/consumer
-
-<> 2021-07-05T044311.500.json
-
-###
-
-GET http://localhost:8014/api/doSomeThing
-
-<> 2021-07-05T044236.200.txt
-
-###
-
-GET http://localhost:8014/api/doSomeThing
-
-<> 2021-07-05T044235.200.txt
-
-###
-
-GET http://localhost:8014/api/doSomeThing
-
-<> 2021-07-05T044234-1.200.txt
-
-###
-
-GET http://localhost:8014/api/doSomeThing
-
-<> 2021-07-05T044234.200.txt
-
-###
-
-GET http://localhost:8014/api/doSomeThing
-
-<> 2021-07-05T044233.200.txt
-
-###
-
-GET http://localhost:8014/api/doSomeThing
-
-<> 2021-07-05T044232.200.txt
 
 ###
 

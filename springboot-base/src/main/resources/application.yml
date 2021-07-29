@@ -1,0 +1,6 @@
+server:
+  port: 8017 #服务器端口
+
+spring:
+  application:
+    name: springboot-base

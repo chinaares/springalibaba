@@ -9,7 +9,7 @@ username=joker&password=123456
 
 ###
 GET http://localhost:8012/user/getUsers
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqb2tlciIsInJvbGUiOiJxdWVyeV9yb2xlLHF1ZXJ5X3VzZXIiLCJleHAiOjE2MjUwMjQyMjN9.ZdGd8kRkFzNw9rhHOVQCUAo53UMRzGS3y3eh1l7XTFo
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqb2tlciIsInJvbGUiOiJxdWVyeV9yb2xlLHF1ZXJ5X3VzZXIiLCJleHAiOjE2Mjc1NDY3OTd9.UY9wFTBnIJx1v1O_OKvh22II9fCNzr89eQJ9jaJyR4g
 
 ###
 DELETE http://localhost:8012/user/deleteUserById?userId=3
