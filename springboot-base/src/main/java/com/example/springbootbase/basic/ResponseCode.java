@@ -7,7 +7,7 @@ import lombok.Getter;
 public enum ResponseCode implements IResponseCode {
     OK(1, "成功"),
     FAIL(0, "失败"),
-    ACCESS_LIMIT_REACHED(401, "超出访问限制"),
+    ACCESS_LIMIT_REACHED(401, "超出访问限制:{1}秒内访问{2}次"),
     ;
     int code;
 

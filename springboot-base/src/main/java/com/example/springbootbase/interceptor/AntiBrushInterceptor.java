@@ -65,10 +65,11 @@ public class AntiBrushInterceptor extends HandlerInterceptorAdapter {
 
     }
 
-    private void render(HttpServletResponse response,int seconds,int maxCount) throws Exception {
+    private void render(HttpServletResponse response,Integer seconds,Integer maxCount) throws Exception {
         response.setContentType("application/json;charset=UTF-8");
         OutputStream out = response.getOutputStream();
-        String str = JSON.toJSONString(APIResponse.fail(ResponseCode.ACCESS_LIMIT_REACHED));
+        final String msg = ResponseCode.ACCESS_LIMIT_REACHED.getMsg().replace("{1}", seconds.toString()).replace("{2}", maxCount.toString());
+        String str = JSON.toJSONString(APIResponse.fail(ResponseCode.ACCESS_LIMIT_REACHED.getCode(),msg));
         out.write(str.getBytes("UTF-8"));
         out.flush();
         out.close();
