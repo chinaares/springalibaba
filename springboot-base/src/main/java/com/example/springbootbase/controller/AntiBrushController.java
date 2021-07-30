@@ -8,12 +8,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
  
 @Controller
-public class FangshuaController {
+public class AntiBrushController {
 
-    @AccessLimit(seconds = 5, maxCount = 5, needLogin = true)
-    @RequestMapping("/fangshua")
+    @AccessLimit(seconds = 60, maxCount = 5, needLogin = true)
+    @RequestMapping("/antiBrush")
     @ResponseBody
-    public APIResponse<String> fangshua() {
+    public APIResponse<String> antiBrush() {
         return APIResponse.ok("请求成功");
 
     }

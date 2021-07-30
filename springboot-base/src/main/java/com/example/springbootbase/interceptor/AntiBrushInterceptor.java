@@ -3,9 +3,9 @@ package com.example.springbootbase.interceptor;
 
 import com.alibaba.fastjson.JSON;
 import com.example.common.exception.basic.APIResponse;
-import com.example.redis.utils.RedisUtil;
 import com.example.springbootbase.basic.ResponseCode;
 import com.example.springbootbase.config.AccessLimit;
+import com.example.springbootbase.utils.RedisUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.method.HandlerMethod;
@@ -16,7 +16,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.OutputStream;
 
 @Component
-public class FangshuaInterceptor extends HandlerInterceptorAdapter {
+//@ComponentScan(basePackages={"com.example.redis.utils"})
+public class AntiBrushInterceptor extends HandlerInterceptorAdapter {
 
     @Autowired
     private RedisUtil redisUtil;
@@ -46,7 +47,7 @@ public class FangshuaInterceptor extends HandlerInterceptorAdapter {
             }
 
             //从redis中获取用户访问的次数
-            Integer count = redisUtil.get(key, Integer.class);
+            Integer count = redisUtil.getObject(key);
             if(count == null){
                 //第一次访问
                 redisUtil.set(key,1,seconds);
@@ -55,7 +56,7 @@ public class FangshuaInterceptor extends HandlerInterceptorAdapter {
                 redisUtil.incr(key, 1);
             } else {
                 //超出访问次数
-                render(response);
+                render(response,seconds,maxCount);
                 return false;
             }
         }
@@ -64,7 +65,7 @@ public class FangshuaInterceptor extends HandlerInterceptorAdapter {
 
     }
 
-    private void render(HttpServletResponse response) throws Exception {
+    private void render(HttpServletResponse response,int seconds,int maxCount) throws Exception {
         response.setContentType("application/json;charset=UTF-8");
         OutputStream out = response.getOutputStream();
         String str = JSON.toJSONString(APIResponse.fail(ResponseCode.ACCESS_LIMIT_REACHED));

@@ -1,4 +1,4 @@
-package com.example.redis.utils;
+package com.example.springbootbase.utils;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;

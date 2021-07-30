@@ -1,0 +1,4 @@
+GET http://localhost:8082/vote
+
+###
+GET http://localhost:8082/publish

@@ -1,7 +1,7 @@
 package com.example.springbootbase.config;
 
 
-import com.example.springbootbase.interceptor.FangshuaInterceptor;
+import com.example.springbootbase.interceptor.AntiBrushInterceptor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
@@ -11,7 +11,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 public class WebConfig implements WebMvcConfigurer {
 
     @Autowired
-    private FangshuaInterceptor interceptor;
+    private AntiBrushInterceptor interceptor;
 
 
     @Override

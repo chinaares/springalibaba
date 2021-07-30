@@ -1,314 +1,298 @@
-GET http://localhost:8012/user/getUsers
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqb2tlciIsInJvbGUiOiJxdWVyeV9yb2xlLHF1ZXJ5X3VzZXIiLCJleHAiOjE2Mjc1NDY3OTd9.UY9wFTBnIJx1v1O_OKvh22II9fCNzr89eQJ9jaJyR4g
+GET http://localhost:8017/antiBrush
 
-<> 2021-07-29T032025.200.json
-
-###
-
-POST http://localhost:8012/authentication/form
-Content-Type: application/x-www-form-urlencoded
-
-username=joker&password=123456
-
-<> 2021-07-29T031957.200.json
+<> 2021-07-30T024349.200.json
 
 ###
 
-GET http://localhost:8012/user/getUsers
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqb2tlciIsInJvbGUiOiJxdWVyeV9yb2xlLHF1ZXJ5X3VzZXIiLCJleHAiOjE2MjUwMjQyMjN9.ZdGd8kRkFzNw9rhHOVQCUAo53UMRzGS3y3eh1l7XTFo
+GET http://localhost:8017/antiBrush
 
-<> 2021-07-29T031833.200.json
-
-###
-
-GET http://localhost:8012/user/getUsers
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqb2tlciIsInJvbGUiOiJxdWVyeV9yb2xlLHF1ZXJ5X3VzZXIiLCJleHAiOjE2MjUwMjQyMjN9.ZdGd8kRkFzNw9rhHOVQCUAo53UMRzGS3y3eh1l7XTFo
-
-<> 2021-07-29T031142.500.json
+<> 2021-07-30T024347-1.200.json
 
 ###
 
-GET http://localhost:8012/user/getUsers
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqb2tlciIsInJvbGUiOiJxdWVyeV9yb2xlLHF1ZXJ5X3VzZXIiLCJleHAiOjE2MjUwMjQyMjN9.ZdGd8kRkFzNw9rhHOVQCUAo53UMRzGS3y3eh1l7XTFo
+GET http://localhost:8017/antiBrush
 
-<> 2021-07-29T030339.500.json
-
-###
-
-GET http://localhost:8012/user/getUsers
-
-<> 2021-07-29T025910.200.json
+<> 2021-07-30T024347.200.json
 
 ###
 
-GET http://localhost:8012/user/getUsers
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqb2tlciIsInJvbGUiOiJxdWVyeV9yb2xlLHF1ZXJ5X3VzZXIiLCJleHAiOjE2MjUwMjQyMjN9.ZdGd8kRkFzNw9rhHOVQCUAo53UMRzGS3y3eh1l7XTFo
+GET http://localhost:8017/antiBrush
 
-<> 2021-07-29T025722.500.json
-
-###
-
-POST http://localhost:8012/authentication/form
-Content-Type: application/x-www-form-urlencoded
-
-username=joker&password=123456
-
-<> 2021-07-29T025511.200.json
+<> 2021-07-30T024334.200.json
 
 ###
 
-POST http://localhost:8012/authentication/form
-Content-Type: application/x-www-form-urlencoded
+GET http://localhost:8017/antiBrush
 
-username=joker&password=123456
-
-<> 2021-07-29T025210.200.json
+<> 2021-07-30T024320.200.json
 
 ###
 
-GET http://localhost:8014/api/doSomeThing
+GET http://localhost:8017/antiBrush
 
-<> 2021-07-05T050924.200.txt
-
-###
-
-GET http://localhost:8014/api/consumer
-
-<> 2021-07-05T050752.500.json
+<> 2021-07-30T024309.200.json
 
 ###
 
-GET http://localhost:8014/api/consumer
+GET http://localhost:8017/antiBrush
 
-<> 2021-07-05T050751.500.json
-
-###
-
-GET http://localhost:8014/api/consumer
-
-<> 2021-07-05T050750-1.500.json
+<> 2021-07-30T023222.200.json
 
 ###
 
-GET http://localhost:8014/api/consumer
+GET http://localhost:8017/antiBrush
 
-<> 2021-07-05T050750.500.json
-
-###
-
-GET http://localhost:8014/api/consumer
-
-<> 2021-07-05T050749.500.json
+<> 2021-07-30T023221.200.json
 
 ###
 
-GET http://localhost:8014/api/consumer
+GET http://localhost:8017/antiBrush
 
-<> 2021-07-05T050748-1.500.json
-
-###
-
-GET http://localhost:8014/api/consumer
-
-<> 2021-07-05T050748.500.json
+<> 2021-07-30T023220.200.json
 
 ###
 
-GET http://localhost:8014/api/consumer
+GET http://localhost:8017/antiBrush
 
-<> 2021-07-05T050747-1.500.json
-
-###
-
-GET http://localhost:8014/api/consumer
-
-<> 2021-07-05T050747.500.json
+<> 2021-07-30T023219.200.json
 
 ###
 
-GET http://localhost:8014/api/consumer
+GET http://localhost:8017/antiBrush
 
-<> 2021-07-05T050746.500.json
-
-###
-
-GET http://localhost:8014/api/consumer
-
-<> 2021-07-05T050745.500.json
+<> 2021-07-30T023218.200.json
 
 ###
 
-GET http://localhost:8014/api/consumer
+GET http://localhost:8017/antiBrush
 
-<> 2021-07-05T050743.500.json
-
-###
-
-GET http://localhost:8014/api/doSomeThing
-
-<> 2021-07-05T050535.200.txt
+<> 2021-07-30T023217.200.json
 
 ###
 
-GET http://localhost:8014/api/doSomeThing
+GET http://localhost:8017/antiBrush
 
-<> 2021-07-05T050534.200.txt
-
-###
-
-GET http://localhost:8014/api/doSomeThing
-
-<> 2021-07-05T050533-1.200.txt
+<> 2021-07-30T023200.200.json
 
 ###
 
-GET http://localhost:8014/api/doSomeThing
+GET http://localhost:8017/antiBrush
 
-<> 2021-07-05T050533.200.txt
-
-###
-
-GET http://localhost:8014/api/doSomeThing
-
-<> 2021-07-05T050532.200.txt
+<> 2021-07-30T022944.200.json
 
 ###
 
-GET http://localhost:8014/api/doSomeThing
+GET http://localhost:8017/antiBrush
 
-<> 2021-07-05T050531-1.200.txt
-
-###
-
-GET http://localhost:8014/api/doSomeThing
-
-<> 2021-07-05T050531.200.txt
+<> 2021-07-30T022942.200.json
 
 ###
 
-GET http://localhost:8014/api/doSomeThing
+GET http://localhost:8017/antiBrush
 
-<> 2021-07-05T050530.200.txt
-
-###
-
-GET http://localhost:8014/api/doSomeThing
-
-<> 2021-07-05T050529-1.200.txt
+<> 2021-07-30T022941.200.json
 
 ###
 
-GET http://localhost:8014/api/doSomeThing
+GET http://localhost:8017/antiBrush
 
-<> 2021-07-05T050529.200.txt
-
-###
-
-GET http://localhost:8014/api/doSomeThing
-
-<> 2021-07-05T050528-1.200.txt
+<> 2021-07-30T022940.200.json
 
 ###
 
-GET http://localhost:8014/api/doSomeThing
+GET http://localhost:8017/antiBrush
 
-<> 2021-07-05T050528.200.txt
-
-###
-
-GET http://localhost:8014/api/doSomeThing
-
-<> 2021-07-05T050527-1.200.txt
+<> 2021-07-30T022939.200.json
 
 ###
 
-GET http://localhost:8014/api/doSomeThing
+GET http://localhost:8017/antiBrush
 
-<> 2021-07-05T050527.200.txt
-
-###
-
-GET http://localhost:8014/api/doSomeThing
-
-<> 2021-07-05T050526.200.txt
+<> 2021-07-30T022938.200.json
 
 ###
 
-GET http://localhost:8014/api/doSomeThing
+GET http://localhost:8017/antiBrush
 
-<> 2021-07-05T050524.200.txt
-
-###
-
-GET http://localhost:8014/api/doSomeThing
-
-<> 2021-07-05T050522.200.txt
+<> 2021-07-30T022925.200.json
 
 ###
 
-GET http://localhost:8014/api/consumer
+GET http://localhost:8017/antiBrush
 
-<> 2021-07-05T050458.500.json
-
-###
-
-GET http://localhost:8014/api/consumer
-
-<> 2021-07-05T050457.500.json
+<> 2021-07-30T022513.200.json
 
 ###
 
-GET http://localhost:8014/api/consumer
+GET http://localhost:8017/antiBrush
 
-<> 2021-07-05T050456-1.500.json
-
-###
-
-GET http://localhost:8014/api/consumer
-
-<> 2021-07-05T050456.500.json
+<> 2021-07-30T022512.200.json
 
 ###
 
-GET http://localhost:8014/api/consumer
+GET http://localhost:8017/antiBrush
 
-<> 2021-07-05T050455.500.json
-
-###
-
-GET http://localhost:8014/api/consumer
-
-<> 2021-07-05T050454.500.json
+<> 2021-07-30T022510.200.json
 
 ###
 
-GET http://localhost:8014/api/consumer
+GET http://localhost:8017/antiBrush
 
-<> 2021-07-05T050453.500.json
-
-###
-
-GET http://localhost:8014/api/consumer
-
-<> 2021-07-05T050452.500.json
+<> 2021-07-30T022459.200.json
 
 ###
 
-GET http://localhost:8014/api/consumer
+GET http://localhost:8017/antiBrush
 
-<> 2021-07-05T050451.500.json
-
-###
-
-GET http://localhost:8014/api/consumer
-
-<> 2021-07-05T050450.500.json
+<> 2021-07-30T022446.200.json
 
 ###
 
-GET http://localhost:8014/api/consumer
+GET http://localhost:8017/antiBrush
 
-<> 2021-07-05T050449.500.json
+<> 2021-07-30T022444.200.json
+
+###
+
+GET http://localhost:8017/antiBrush
+
+<> 2021-07-30T022443.200.json
+
+###
+
+GET http://localhost:8017/antiBrush
+
+<> 2021-07-30T022441.200.json
+
+###
+
+GET http://localhost:8017/antiBrush
+
+<> 2021-07-30T022438.200.json
+
+###
+
+GET http://localhost:8017/antiBrush
+
+<> 2021-07-30T022333.200.json
+
+###
+
+GET http://localhost:8017/antiBrush
+
+<> 2021-07-30T022255.200.json
+
+###
+
+GET http://localhost:8017/antiBrush
+
+<> 2021-07-30T022242.200.json
+
+###
+
+GET http://localhost:8017/antiBrush
+
+<> 2021-07-30T022232.200.json
+
+###
+
+GET http://localhost:8017/antiBrush
+
+<> 2021-07-30T022214.200.json
+
+###
+
+GET http://localhost:8017/antiBrush
+
+<> 2021-07-30T021941.200.json
+
+###
+
+GET http://localhost:8017/antiBrush
+
+<> 2021-07-30T021919.200.json
+
+###
+
+GET http://localhost:8017/antiBrush
+
+<> 2021-07-30T021812.200.json
+
+###
+
+GET http://localhost:8017/antiBrush
+
+<> 2021-07-30T021204.200.json
+
+###
+
+GET http://localhost:8017/antiBrush
+
+<> 2021-07-30T021138.200.json
+
+###
+
+GET http://localhost:8017/antiBrush
+
+<> 2021-07-30T020701.200.json
+
+###
+
+GET http://localhost:8017/antiBrush
+
+###
+
+GET http://localhost:8017/antiBrush
+
+<> 2021-07-30T014549.200.json
+
+###
+
+GET http://localhost:8017/antiBrush
+
+<> 2021-07-30T014357.200.json
+
+###
+
+GET http://localhost:8017/antiBrush
+
+<> 2021-07-30T014355.200.json
+
+###
+
+GET http://localhost:8017/antiBrush
+
+<> 2021-07-30T014353.200.json
+
+###
+
+GET http://localhost:8017/antiBrush
+
+<> 2021-07-30T014352.200.json
+
+###
+
+GET http://localhost:8017/antiBrush
+
+<> 2021-07-30T014350.200.json
+
+###
+
+GET http://localhost:8017/antiBrush
+
+<> 2021-07-30T014348.200.json
+
+###
+
+GET http://localhost:8017/antiBrush
+
+<> 2021-07-30T014343.200.json
+
+###
+
+GET http://localhost:8017/antiBrush
+
+<> 2021-07-30T014259.500.json
 
 ###
 
