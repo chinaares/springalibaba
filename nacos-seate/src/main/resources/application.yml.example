@@ -1,0 +1,21 @@
+server:
+  port: 8018
+
+
+spring:
+  application:
+    name: nocas-seate
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/seate?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&useSSL=true&autoReconnect=true&zeroDateTimeBehavior=CONVERT_TO_NULL
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  cloud:
+    alibaba:
+      seata:
+        tx-service-group: seata_tc_server # 定义事务组的名称
+
+# mybatis-plus相关配置
+mybatis-plus:
+# xml扫描，多个目录用逗号或者分号分隔（告诉 Mapper 所对应的 XML 文件位置）
+  mapper-locations: classpath:mapper/*.xml

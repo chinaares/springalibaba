@@ -2,8 +2,8 @@ package com.example.security.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.example.security.mapper.SysUserMapper;
 import com.example.security.entity.SysUser;
+import com.example.security.mapper.SysUserMapper;
 import com.example.security.service.SysUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

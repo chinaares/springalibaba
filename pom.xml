@@ -35,6 +35,7 @@
         <module>nacos-sentinel</module>
         <module>scheduled</module>
         <module>springboot-base</module>
+        <module>nacos-seate</module>
     </modules>
 
     <properties>
@@ -47,6 +48,8 @@
         <hutool.version>4.6.3</hutool.version>
         <easyexcel.version>2.2.6</easyexcel.version>
         <fastjson.version>1.2.62</fastjson.version>
+        <alibaba.seata.version>2.2.0.RELEASE</alibaba.seata.version>
+        <seata.version>1.4.2</seata.version>
     </properties>
 
     <dependencies>
@@ -92,6 +95,20 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+
+            <!--seata-->
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-seata</artifactId>
+                <version>${alibaba.seata.version}</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/io.seata/seata-all -->
+<!--            <dependency>-->
+<!--                <groupId>io.seata</groupId>-->
+<!--                <artifactId>seata-all</artifactId>-->
+<!--                <version>${seata.version}</version>-->
+<!--            </dependency>-->
+
 
             <!-- https://mvnrepository.com/artifact/com.github.xiaoymin/knife4j-spring-boot-starter -->
             <dependency>
