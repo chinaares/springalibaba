@@ -22,6 +22,17 @@ spring:
           #是将请求路径上的服务名配置为小写（因为服务注册的时候，向注册中心注册时将服务名转成大写的了
           lower-case-service-id: true
       routes:
+        - id: limit-service
+          uri: lb://nocas-provide
+          order: 10000
+          predicates:
+            - Path=/nacos-provide/**
+          filters:
+            - name: RequestRateLimiter
+              args:
+                redis-rate-limiter.replenishRate: 1  #允许用户每秒处理多少个请求
+                redis-rate-limiter.burstCapacity: 3 #令牌桶的容量，允许在一秒钟内完成的最大请求数
+                key-resolver: "#{@ipKeyResolver}" #用于限流的键的解析器的 Bean 对象的名字。它使用 SpEL 表达式根据#{@beanName}从 Spring 容器中获取 Bean 对象。
         - id: nocas-provide
           uri: lb://nocas-provide
           predicates:

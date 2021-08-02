@@ -9,6 +9,7 @@ import reactor.core.publisher.Mono;
 //全局过滤器，使用配置类形式，直接构造bean，使用注解完成Ordered接口功能,统计接口调用时间
 @Configuration
 public class GlobalGatewayFilterConfig {
+
     @Bean
     @Order(-100)
     public GlobalFilter elapsedGlobalFilter() {
