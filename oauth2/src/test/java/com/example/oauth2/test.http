@@ -1,0 +1,26 @@
+# 密码模式
+GET http://localhost:5000/oauth/token?client_id=user&client_secret=style&grant_type=password&username=user&password=123456
+
+###
+# 客户端凭证模式
+GET http://localhost:5000/oauth/token?client_id=user&client_secret=style&grant_type=client_credentials&scope=read
+
+###
+# 授权码模式
+GET http://localhost:5000/oauth/authorize?client_id=user&response_type=code&redirect_uri=https://www.baidu.com&scop=all
+# 重定向 到 https://www.baidu.com/?code=8t3cYq  并且携带了code码
+
+####
+# 根据 code 进行获取token
+GET http://localhost:5000/oauth/token?code=8t3cYq&grant_type=authorization_code&redirect_uri=https://www.baidu.com&scope=all&client_id=user&client_secret=style
+
+###
+
+# 简化模式
+GET http://localhost:5000/oauth/authorize?client_id=user&response_type=token&redirect_uri=https://www.baidu.com
+
+####
+# 刷新token接口
+
+GET http://localhost:5000/oauth/token?client_id=user&client_secret=style&grant_type=refresh_token&refresh_token=f5f90044-568b-4cac-81ae-e544926f546d
+

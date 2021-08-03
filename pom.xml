@@ -36,6 +36,8 @@
         <module>scheduled</module>
         <module>springboot-base</module>
         <module>nacos-seate</module>
+        <module>oauth2</module>
+        <module>oauth2-resource-service</module>
     </modules>
 
     <properties>
