@@ -1,4 +1,4 @@
-package com.example.common.exception.basic;
+package com.example.nacosgateway.security.basic;
 
 import lombok.Getter;
 

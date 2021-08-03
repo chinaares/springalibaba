@@ -4,6 +4,11 @@ server:
 spring:
   application:
     name: nacos-gateway
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/security?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&useSSL=true&autoReconnect=true&zeroDateTimeBehavior=CONVERT_TO_NULL
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
   redis:
     host: localhost
     port: 6379
@@ -28,7 +33,7 @@ spring:
           predicates:
             - Path=/nacos-provide/**
           filters:
-            - MyParam=name # 配置后就可以获取请求中key为name的值,对应MyParamGatewayFilterFactory
+            - MyParam: name # 配置后就可以获取请求中key为name的值,对应MyParamGatewayFilterFactory
             - name: RequestRateLimiter
               args:
                 redis-rate-limiter.replenishRate: 1  #允许用户每秒处理多少个请求

@@ -3,7 +3,7 @@ package com.example.springbootbase.interceptor;
 
 import com.alibaba.fastjson.JSON;
 import com.example.common.exception.basic.APIResponse;
-import com.example.springbootbase.basic.ResponseCode;
+import com.example.common.exception.basic.ResponseCode;
 import com.example.springbootbase.config.AccessLimit;
 import com.example.springbootbase.utils.RedisUtil;
 import org.springframework.beans.factory.annotation.Autowired;
