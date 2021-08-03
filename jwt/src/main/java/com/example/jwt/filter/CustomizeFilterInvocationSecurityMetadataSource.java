@@ -14,6 +14,7 @@ import java.util.List;
 
 /**
  * 安全元数据源FilterInvocationSecurityMetadataSource，主要是拦截到请求路径，做相关处理
+ * 资源权限的匹配
  */
 @Component
 public class CustomizeFilterInvocationSecurityMetadataSource implements FilterInvocationSecurityMetadataSource {

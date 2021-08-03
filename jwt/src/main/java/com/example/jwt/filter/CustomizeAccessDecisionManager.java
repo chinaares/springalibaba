@@ -13,6 +13,7 @@ import java.util.Iterator;
 
 /**
  *  访问决策管理器
+ *  执行访问策略
  */
 @Component
 public class CustomizeAccessDecisionManager implements AccessDecisionManager {

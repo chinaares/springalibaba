@@ -28,6 +28,7 @@ spring:
           predicates:
             - Path=/nacos-provide/**
           filters:
+            - MyParam=name # 配置后就可以获取请求中key为name的值,对应MyParamGatewayFilterFactory
             - name: RequestRateLimiter
               args:
                 redis-rate-limiter.replenishRate: 1  #允许用户每秒处理多少个请求

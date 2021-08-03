@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: auth-service
+    name: auth-resource-service
   main:
     allow-bean-definition-overriding: true #覆盖之前相同名称的bean
   cloud:
