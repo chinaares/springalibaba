@@ -17,15 +17,9 @@
 	<dependencies>
 		<!--spring security 安全框架-->
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-security</artifactId>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-security</artifactId>
 		</dependency>
-		<!--JWT工具依赖-->
-<!--		<dependency>-->
-<!--			<groupId>io.jsonwebtoken</groupId>-->
-<!--			<artifactId>jjwt</artifactId>-->
-<!--			<version>0.9.1</version>-->
-<!--		</dependency>-->
 		<dependency>
 			<groupId>com.example</groupId>
 			<artifactId>common</artifactId>
