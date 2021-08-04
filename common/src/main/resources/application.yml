@@ -1,0 +1,5 @@
+## swagger自定义配置属性
+swagger:
+  enabled: true
+  title: account-service在线接口平台
+  description: account-service微服务相关接口

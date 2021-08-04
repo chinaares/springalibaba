@@ -23,11 +23,11 @@ import springfox.documentation.swagger2.configuration.Swagger2DocumentationConfi
 //根据配置文件决定是否自动配置
 @ConditionalOnProperty(prefix = "swagger", name = "enabled", havingValue = "true")
 @Import({Swagger2DocumentationConfiguration.class})
-public class SwaggerConfig {
+public class SwaggerAutoConfiguration {
     private static final String VERSION = "1.0.0";
     private SwaggerProperties swaggerProperties;
 
-    public SwaggerConfig(SwaggerProperties swaggerProperties) {
+    public SwaggerAutoConfiguration(SwaggerProperties swaggerProperties) {
         this.swaggerProperties = swaggerProperties;
     }
 
