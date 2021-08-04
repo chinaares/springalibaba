@@ -28,7 +28,7 @@ import java.util.List;
 @AllArgsConstructor
 @Slf4j
 public class DocumentationConfig implements SwaggerResourcesProvider {
-    public static final String V2_API_URI = "v2/api-docs";
+    public static final String V2_API_URI = "/v2/api-docs";
     public static final String V3_API_URI = "/v3/api-docs?group=WebApi";
     private final RouteLocator routeLocator;
     private final GatewayProperties gatewayProperties;
@@ -45,7 +45,7 @@ public class DocumentationConfig implements SwaggerResourcesProvider {
                     .filter(predicateDefinition -> ("Path").equalsIgnoreCase(predicateDefinition.getName()))
                     .forEach(predicateDefinition -> resources.add(swaggerResource(route.getId(),
                             predicateDefinition.getArgs().get(NameUtils.GENERATED_NAME_PREFIX + "0")
-                                    .replace("**", V2_API_URI))));
+                                    .replace("/**", V2_API_URI))));
         });
 //        routeLocator.getRoutes()
 //                .filter(route -> route.getUri().getHost() != null && route.getUri().getScheme().startsWith("http"))

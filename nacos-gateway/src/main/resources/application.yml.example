@@ -20,6 +20,18 @@ spring:
         min-idle: 0
   cloud:
     gateway:
+      # globalcors:
+      #   cors-configurations:
+      #     '[/**]':
+      #       allowed-origins: "*"
+      #       allowed-headers: "*"
+      #       allow-credentials: true
+      #       allowed-methods:
+      #         - GET
+      #         - POST
+      #         - DELETE
+      #         - PUT
+      #         - OPTION
       discovery:
         locator:
           #表明gateway开启服务注册和发现的功能，并且spring cloud gateway自动根据服务发现为每一个服务创建了一个router，这个router将以服务名开头的请求路径转发到对应的服务
@@ -27,36 +39,30 @@ spring:
           #是将请求路径上的服务名配置为小写（因为服务注册的时候，向注册中心注册时将服务名转成大写的了
           lower-case-service-id: true
       routes:
-        - id: limit-service
-          uri: lb://nocas-provide
-          order: 10000
-          predicates:
-            - Path=/nacos-provide/**
-          filters:
-            - MyParam: name # 配置后就可以获取请求中key为name的值,对应MyParamGatewayFilterFactory
-            - name: RequestRateLimiter
-              args:
-                redis-rate-limiter.replenishRate: 1  #允许用户每秒处理多少个请求
-                redis-rate-limiter.burstCapacity: 3 #令牌桶的容量，允许在一秒钟内完成的最大请求数
-                key-resolver: "#{@ipKeyResolver}" #用于限流的键的解析器的 Bean 对象的名字。它使用 SpEL 表达式根据#{@beanName}从 Spring 容器中获取 Bean 对象。
         - id: nocas-provide
           uri: lb://nocas-provide
           predicates:
-            - Path=/**
-          # filters:
-          #   - StripPrefix=1
+            - Path=/nocas-provide/**
+          filters:
+            # 作用是去掉请求路径的最前面n个
+            - StripPrefix=1
+            - name: RequestRateLimiter
+              args:
+                redis-rate-limiter.replenishRate: 1
+                redis-rate-limiter.burstCapacity: 3
+                key-resolver: "#{@ipKeyResolver}"
         - id: nocas-feign
           uri: lb://nocas-feign
           predicates:
-            - Path=/**
-          # filters:
-          #   - StripPrefix=1
+            - Path=/nocas-feign/**
+          filters:
+            - StripPrefix=1
         - id: nocas-consumer
           uri: lb://nocas-consumer
           predicates:
-            - Path=/**
-          # filters:
-          #   - StripPrefix=1
+            - Path=/nocas-consumer/**
+          filters:
+            - StripPrefix=1
 
 gateway:
   # 不校验websocket token
