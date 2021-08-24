@@ -3,28 +3,28 @@ package com.example.common.utils.randomAccessFile;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.*;
-import java.net.Socket; 
+import java.net.Socket;
 
 public class FileTransferClient extends Socket {
- 
+
     private static final String SERVER_IP = "127.0.0.1"; // 服务端IP
     private static final int SERVER_PORT = 8899; // 服务端端口
     private Socket client;
     private DataOutputStream dos;
-    private DataInputStream dis;  
-    private RandomAccessFile rad;  
+    private DataInputStream dis;
+    private RandomAccessFile rad;
 
     public FileTransferClient() throws Exception {
         super(SERVER_IP, SERVER_PORT);
         this.client = this;
         //System.out.println("客户端：成功连接服务端");
     }
-    
+
     public void sendFile(String filePath, String targetPath) throws Exception {
         try {
             File file = new File(filePath);
-            
-            if(file.exists()) {
+
+            if (file.exists()) {
                 dos = new DataOutputStream(client.getOutputStream());     //发送信息 getOutputStream方法会返回一个java.io.OutputStream对象
                 dis = new DataInputStream(client.getInputStream());    //接收远程对象发送来的信息  getInputStream方法会返回一个java.io.InputStream对象
                 dos.writeUTF(targetPath); //发送目标路径
@@ -48,8 +48,8 @@ public class FileTransferClient extends Socket {
                     rad.seek(size);
                     //System.out.println("客户端：文件定位完成");
                     //移动文件指针
-                    while((length = rad.read(bytes)) > 0){
-                        dos.write(bytes, 0, length);                            
+                    while ((length = rad.read(bytes)) > 0) {
+                        dos.write(bytes, 0, length);
                         dos.flush();
                         //每1kb清空一次缓冲区
                         //为了避免每读入一个字节都写一次，java的输流有了缓冲区，读入数据时会首先将数据读入缓冲区，等缓冲区满后或执行flush或close时一次性进行写入操作
@@ -60,31 +60,31 @@ public class FileTransferClient extends Socket {
         } catch (Exception e) {
             e.printStackTrace();
         } finally {    //关闭资源
-            if(dos != null)
+            if (dos != null)
                 dos.close();
-            if(dis != null)
+            if (dis != null)
                 dis.close();
-            if(rad != null)
+            if (rad != null)
                 rad.close();
             client.close();
         }
-        
+
     }
- 
-    class cancelActionListener implements ActionListener{    //关闭按钮监听器
-        public void actionPerformed(ActionEvent e3){
+
+    class cancelActionListener implements ActionListener {    //关闭按钮监听器
+        public void actionPerformed(ActionEvent e3) {
             try {
                 //System.out.println("客户端：文件传输取消");
-                if(dis != null)
+                if (dis != null)
                     dis.close();
-                if(dos != null)
+                if (dos != null)
                     dos.close();
-                if(rad != null)
+                if (rad != null)
                     rad.close();
                 client.close();
             } catch (IOException e1) {
-                
+
             }
         }
-    }   
+    }
 }
