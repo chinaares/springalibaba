@@ -27,6 +27,7 @@ public class Test02 {
 						break;
 					case 0:
 						copy(srcFile, dstFile, start);
+						break;
 					default:
 						System.out.println("输入错误,请输入一个 0或1 的数字 进行选择");
 						break;
