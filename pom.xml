@@ -36,6 +36,7 @@
         <module>scheduled</module>
         <module>springboot-base</module>
         <module>nacos-seate</module>
+        <module>interview</module>
     </modules>
 
     <properties>
