@@ -8,6 +8,8 @@ import io.netty.channel.epoll.EpollEventLoopGroup;
 import io.netty.channel.epoll.EpollServerSocketChannel;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
+import io.netty.handler.logging.LogLevel;
+import io.netty.handler.logging.LoggingHandler;
 import io.netty.handler.ssl.SslContext;
 import io.netty.handler.ssl.SslContextBuilder;
 import io.netty.handler.ssl.util.SelfSignedCertificate;
@@ -65,6 +67,7 @@ public class NettyServer {
         bootstrap.localAddress(new InetSocketAddress(nettyProperties.getPort()))
                 .option(ChannelOption.SO_BACKLOG, nettyProperties.getSobacklog()) //设置线程队列中等待连接的个数
                 .childOption(ChannelOption.SO_KEEPALIVE, true) //保持活动连接状态
+                .handler(new LoggingHandler(LogLevel.INFO))//设置log监听器，并且日志级别为INFO，方便观察运行流程
                 .childHandler(serverChannelInitializer(sslContext))
                 // 两小时内没有数据的通信时,TCP会自动发送一个活动探测数据报文
                 .childOption(ChannelOption.SO_KEEPALIVE, true);
